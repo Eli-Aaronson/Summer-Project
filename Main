@@ -1,0 +1,80 @@
+class Main {
+  public static void main(String[] args) {
+    int[] Q1W = {1,5,9,13};
+    int[] Q1S = {2,6,10,14};
+    int[] Q1M = {3,7,11,15};
+    int[] Q1E = {4,8,12,16};
+    int[] Q2W = {17,21,25,29};
+    int[] Q2S = {18,22,26,30};
+    int[] Q2M = {19,23,27,31};
+    int[] Q2E = {20,24,28,32};
+    int[] Q3W = {33,37,41,45};
+    int[] Q3S = {34,38,42,46};
+    int[] Q3M = {35,39,43,47};
+    int[] Q3E = {36,40,44,48};
+    int[] Q4W = {49,53,57,61};
+    int[] Q4S = {50,54,58,62};
+    int[] Q4M = {51,55,59,63};
+    int[] Q4E = {52,56,60,64};
+    
+    int[][] ret = new int[6144][];
+    
+    int[][] Set1 = {Q1W, Q2S, Q3M, Q4E};
+    int[][] Set2 = {Q1W, Q2S, Q4M, Q3E};
+    int[][] Set3 = {Q1W, Q3S, Q2M, Q4E};
+    int[][] Set4 = {Q1W, Q3S, Q4M, Q2E};
+    int[][] Set5 = {Q1W, Q4S, Q2M, Q3E};
+    int[][] Set6 = {Q1W, Q4S, Q3M, Q2E};
+    
+    int[][] Set7 = {Q2W, Q1S, Q3M, Q4E};
+    int[][] Set8 = {Q2W, Q1S, Q4M, Q3E};
+    int[][] Set9 = {Q2W, Q3S, Q1M, Q4E};
+    int[][] Set10 = {Q2W, Q3S, Q4M, Q1E};
+    int[][] Set11 = {Q2W, Q4S, Q1M, Q3E};
+    int[][] Set12 = {Q2W, Q4S, Q3M, Q1E};
+
+    int[][] Set13 = {Q3W, Q2S, Q1M, Q4E};
+    int[][] Set14 = {Q3W, Q2S, Q4M, Q1E};
+    int[][] Set15 = {Q3W, Q1S, Q2M, Q4E};
+    int[][] Set16 = {Q3W, Q1S, Q4M, Q2E};
+    int[][] Set17 = {Q3W, Q4S, Q2M, Q1E};
+    int[][] Set18 = {Q3W, Q4S, Q1M, Q2E};
+
+    int[][] Set19 = {Q4W, Q2S, Q3M, Q1E};
+    int[][] Set20 = {Q4W, Q2S, Q1M, Q3E};
+    int[][] Set21 = {Q4W, Q3S, Q2M, Q1E};
+    int[][] Set22 = {Q4W, Q3S, Q1M, Q2E};
+    int[][] Set23 = {Q4W, Q1S, Q2M, Q3E};
+    int[][] Set24 = {Q4W, Q1S, Q3M, Q2E};
+    int[][][] Sets = {Set1,Set2,Set3,Set4,Set5,Set6,Set7,Set8,Set9,Set10,Set11,Set12,Set13,Set14,Set15,Set16,Set17,Set18,Set19,Set20,Set21,Set22,Set23,Set24};
+    
+    int counter = 0;
+    for(int set = 0; set < 24; set++)
+    {
+      for(int i = 0; i < 4; i++)
+        {
+          for(int j = 0; j < 4; j++)
+            {
+              for(int k = 0; k < 4; k++)
+                {
+                  for(int l = 0; l < 4; l++)
+                    {
+                      int[] newVar = 
+                        {Sets[set][0][i],Sets[set][1][j],Sets[set][2][k],Sets[set][3][l]};
+                      ret[counter] = newVar;
+                      counter++;
+                    }
+                }
+            }
+        }
+      }
+    for(int i = 0; i < ret.length; i++)
+      {
+        for(int j = 0; j < ret[i].length; j++)
+          {
+            System.out.print(ret[i][j] + " ");
+          }
+        System.out.println();
+      }
+    }
+}
